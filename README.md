@@ -24,3 +24,5 @@ Clone this repository.
 npm install
 npm start
 ```
+The bot uses the same ports as the noxious application so it will need to operate
+on a different machine/ip.
