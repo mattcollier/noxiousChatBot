@@ -404,13 +404,14 @@ function startHiddenService() {
     console.log('Creating new noxious service');
     ths.createHiddenService('noxious','1111');
     ths.saveConfig();
+    // TODO does not work propery on initial startup without workaround
+    // https://github.com/Mowje/node-ths/issues/3
     // Why this?  https://github.com/Mowje/node-ths/issues/5
     var myDelegate = function() {
       ths.signalReload();
     }
-    process.nextTick(myDelegate);
+    setTimeout(myDelegate, 25);
   }
-  // TODO does not work propery on initial startup: https://github.com/Mowje/node-ths/issues/3
   ths.getOnionAddress('noxious', function(err, onionAddress) {
     if(err) {
       console.error('[getOnionAddress] Error while reading hostname file: ' + err);
@@ -418,6 +419,7 @@ function startHiddenService() {
     else {
       console.log('[getOnionAddress] Onion Address is: ', onionAddress);
       myAddress = onionAddress;
+      console.log('[Noxious Client ID]', myAddress.split('.')[0]);
     }
   });
 }

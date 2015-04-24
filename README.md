@@ -17,12 +17,50 @@ libraries via the [ursa module](https://github.com/quartzjer/ursa).  The
 noxious instant messaging application utilizes the JavaScript
 [forge module](https://github.com/digitalbazaar/forge) for crypto, so the bot
 serves to test compatibility for the crypto functions.
-##Installation
-You will need a working npm and iojs installation and a node-gyp toolchain.  
-Clone this repository.
+##OS Dependencies
+###Linux
 ```
+apt-get install tor build-essential libssl-dev git
+```
+###OSX
+```
+brew install openssl
+brew install tor
+brew install git
+```
+##Installation
+You will need a working npm and iojs installation.
+###pangyp
+The [pangyp module](https://www.npmjs.com/package/pangyp) is a fork of the
+[node-gyp module](https://www.npmjs.com/package/node-gyp) that include io.js
+support.  pangyp is a cross-platform command-line tool written in Node.js for
+compiling native addon modules for io.js
+```
+npm install pangyp -g
+```
+##Clone and Build
+```
+git clone https://github.com/mattcollier/noxiousChatBot.git
+cd noxiousChatBot
 npm install
+cd node_modules/ursa
+pangyp rebuild
+cd ../..
+```
+*note:* You should see 'gyp OK' at the end of the 'pangyp rebuild' process.  This
+means that the native code compiled properly.
+##Users Guide
+After you see the Noxious Client ID diplayed in the console, wait about 30 seconds
+for your hidden service to fully publish on the Tor network.  After that, you
+may send a contact request to the bot.  The bot will automatically accept your
+request.  Once the bot becomes available as a contact in your Noxious Client, you
+may send messages that will be echoed back to you.
+###Start the Bot
+From the noxiousChatBot folder do:
+```
 npm start
 ```
-The bot uses the same ports as the noxious application so it will need to operate
-on a different machine/ip.
+*note:* The bot uses the same ports as the noxious application so it will need
+to operate on a different machine/ip.
+###Stopping the Bot
+Use Ctrl-C to stop the bot.  This will gracefully shut down the Tor process as well.
