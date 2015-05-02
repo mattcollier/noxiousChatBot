@@ -419,7 +419,7 @@ function startHiddenService() {
     else {
       console.log('[getOnionAddress] Onion Address is: ', onionAddress);
       myAddress = onionAddress;
-      console.log('[Noxious Client ID]', myAddress.split('.')[0]);
+      console.log('[Noxious Chat ID]', myAddress.split('.')[0]);
     }
   });
 }
