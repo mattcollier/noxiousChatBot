@@ -37,10 +37,8 @@ class NoxiousCrypto{
         keyData.set('Pem', privPem);
       }
       this.myPrivKey = ursa.createPrivateKey(privPem, '', 'base64');
-      // make a public key, to be used for encryption
       this.pubPem = this.myPrivKey.toPublicPem();
-      this.myPubKey = ursa.createPublicKey(this.pubPem);
-      this.keySize = this.myPubKey.getModulus().length*8;
+      this.keySize = this.myPrivKey.getModulus().length*8;
     }
   }
   encrypt(plainText) {
