@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/mattcollier/noxiousChatBot",
   "dependencies": {
-    "ursa": "^0.8.4",
+    "ursa": "^0.9.1",
     "canonical-json": "0.0.4",
     "socksv5": "0.0.4",
     "ths": "git+https://github.com/Mowje/node-ths.git#dev"
