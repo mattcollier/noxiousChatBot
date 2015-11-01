@@ -306,7 +306,7 @@ function processMessage(msg) {
       //var decObj = JSON.parse(myCrypto.decrypt(content.data));
       myCrypto.decrypt(content.data, function(err, rawJson) {
         if(!err) {
-          var decObj = decObj = JSON.parse(rawJson);
+          var decObj = JSON.parse(rawJson);
           var content = decObj.content;
           var signature = decObj.signature;
           // TODO additional integrity checks?
@@ -314,7 +314,9 @@ function processMessage(msg) {
             if (contactList.has(content.from)) {
               switch (content.type) {
                 case 'message':
+                  console.log('BEFORE TMPCRYPTO');
                   var tmpCrypto = new NoxiousCrypto({'pubPem': contactList.get(content.from).pubPem});
+                  console.log('AFTER TMPCRYPTO');
                   if (tmpCrypto.signatureVerified(jsStringify(content), signature)) {
                     console.log('[processMessage] Message is properly signed.');
                     if (content.to==myAddress && content.from!==undefined && content.from && content.from!==myAddress) {
