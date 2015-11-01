@@ -99,7 +99,7 @@ class NoxiousCrypto{
     }
     console.log('NOXCRYPTO BEFORE RETURN', Buffer.concat(decryptedBuffers).toString());
     //concatenates all decrypted buffers and returns the corresponding String
-    callback(Buffer.concat(decryptedBuffers).toString());
+    callback(null, Buffer.concat(decryptedBuffers).toString());
   }
   signString(data) {
     var md = forge.md.sha256.create();
