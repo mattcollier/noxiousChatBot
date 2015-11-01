@@ -311,7 +311,9 @@ function processMessage(msg) {
           var signature = decObj.signature;
           // TODO additional integrity checks?
           if (content.to && content.to == myAddress && content.from && isValidTorHiddenServiceName(content.from) && content.type && content.msgText) {
+            console.log('IF AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
             if (contactList.has(content.from)) {
+              console.log('IF BBBBBBBBBBBBBBBBBBBBBBBBBBBBB');
               switch (content.type) {
                 case 'message':
                   console.log('BEFORE TMPCRYPTO');
