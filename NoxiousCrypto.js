@@ -1,3 +1,5 @@
+// global console
+
 "use strict";
 
 var
@@ -92,6 +94,7 @@ class NoxiousCrypto{
       encryptedBuffer.copy(tempBuffer, 0, i*keySizeBytes, (i+1)*keySizeBytes);
       //decrypts and stores current chunk
       var decryptedBuffer = this.myPrivKey.decrypt(tempBuffer.toString('binary'), 'RSA-OAEP');
+      console.log('DECRYPTED BUFFER', decryptedBuffer.toString());
       decryptedBuffers.push(new Buffer(decryptedBuffer, 'utf8'));
     }
     //concatenates all decrypted buffers and returns the corresponding String
