@@ -284,7 +284,7 @@ function preProcessMessage(msg) {
 
 function processMessage(msg) {
   var msgObj = JSON.parse(msg);
-  //console.log('[process message] ', msgObj);
+  console.log('[process message] ', msgObj);
   var content = msgObj.content;
   switch (content.type) {
     case 'introduction':
