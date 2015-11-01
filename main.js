@@ -305,6 +305,7 @@ function processMessage(msg) {
     case 'encryptedData':
       //var decObj = JSON.parse(myCrypto.decrypt(content.data));
       myCrypto.decrypt(content.data, function(err, rawJson) {
+        console.log('INSIDE MYCRYPTO CALLBACK');
         if(!err) {
           var decObj = JSON.parse(rawJson);
           var content = decObj.content;
