@@ -335,6 +335,8 @@ function processMessage(msg) {
               }
             }
           }
+        } else {
+          console.log('THERE WAS AN ERROR', err);
         }
       });
       break;
