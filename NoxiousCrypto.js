@@ -97,7 +97,7 @@ class NoxiousCrypto{
       console.log('DECRYPTED BUFFER', decryptedBuffer.toString());
       decryptedBuffers.push(new Buffer(decryptedBuffer, 'utf8'));
     }
-    console.log('NOXCRYPTO BEFORE RETURN');
+    console.log('NOXCRYPTO BEFORE RETURN', Buffer.concat(decryptedBuffers).toString());
     //concatenates all decrypted buffers and returns the corresponding String
     return Buffer.concat(decryptedBuffers).toString();
   }
