@@ -76,6 +76,7 @@ class NoxiousCrypto{
     return Buffer.concat(encryptedBuffersList).toString('base64');
   }
   decrypt(cipherText) {
+    console.log('INSIDE NOXCRYPTO DECRYPT');
     var keySizeBytes = Math.ceil(this.keySize/8);
     var encryptedBuffer = new Buffer(cipherText, 'base64');
     var decryptedBuffers = [];
