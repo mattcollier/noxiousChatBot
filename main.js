@@ -82,7 +82,7 @@ function buildEncryptedMessage(destAddress, msgText) {
   msgContent.msgText = msgText;
   let msgObj = {};
   msgObj.content = msgContent;
-  console.log('BUILDENCRYPTEDMESSAGE', JSON.stringify(msObj, null, 2));
+  console.log('BUILDENCRYPTEDMESSAGE', JSON.stringify(msgObj, null, 2));
   // sign using my private key
   msgObj.signature = myCrypto.signString(jsStringify(msgContent));
   // encrypt using recipients public key
