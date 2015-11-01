@@ -77,7 +77,7 @@ class NoxiousCrypto{
     }
     return Buffer.concat(encryptedBuffersList).toString('base64');
   }
-  decrypt(cipherText) {
+  decrypt(cipherText, callback) {
     console.log('INSIDE NOXCRYPTO DECRYPT');
     var keySizeBytes = Math.ceil(this.keySize/8);
     var encryptedBuffer = new Buffer(cipherText, 'base64');
@@ -99,7 +99,7 @@ class NoxiousCrypto{
     }
     console.log('NOXCRYPTO BEFORE RETURN', Buffer.concat(decryptedBuffers).toString());
     //concatenates all decrypted buffers and returns the corresponding String
-    return Buffer.concat(decryptedBuffers).toString();
+    callback(Buffer.concat(decryptedBuffers).toString());
   }
   signString(data) {
     var md = forge.md.sha256.create();
