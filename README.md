@@ -49,18 +49,18 @@ cd ../..
 ```
 *note:* You should see 'gyp OK' at the end of the 'pangyp rebuild' process.  This
 means that the native code compiled properly.
-##Users Guide
+## Users Guide
 After you see the Noxious Client ID diplayed in the console, wait about 30 seconds
 for your hidden service to fully publish on the Tor network.  After that, you
 may send a contact request to the bot.  The bot will automatically accept your
 request.  Once the bot becomes available as a contact in your Noxious Client, you
 may send messages that will be echoed back to you.
-###Start the Bot
+### Start the Bot
 From the noxiousChatBot folder do:
 ```
 npm start
 ```
 *note:* The bot uses the same ports as the noxious application so it will need
 to operate on a different machine/ip.
-###Stopping the Bot
+### Stopping the Bot
 Use Ctrl-C to stop the bot.  This will gracefully shut down the Tor process as well.
