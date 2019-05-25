@@ -1,9 +1,9 @@
 # noxiousChatBot
 echoBot for [noxious instant messaging application](https://github.com/mattcollier/noxious).
-##Features
+## Features
 This bot will automatically accept a contact request sent to it.  Subsequently,
 it will echo any chat messages back to the sender.
-##Data Files
+## Data Files
 All data files for the bot are store in a folder called 'noxiousData' that will
 be created under the application folder on initial start-up.  This folder
 contains lists of registered contacts as well as the RSA key the bot uses for
@@ -11,26 +11,26 @@ encryption/decryption/signing.  Persistent data relating to tor and the hidden
 service can be found in 'noxiousData/ths-data'.  One may delete the noxiousData
 folder entirely in order to reset and regenerate all new keys and a new tor
 hidden service name.
-##Crypto
+## Crypto
 All encryption/decryption/signing in the bot is performed by native openssl
 libraries via the [ursa module](https://github.com/quartzjer/ursa).  The
 noxious instant messaging application utilizes the JavaScript
 [forge module](https://github.com/digitalbazaar/forge) for crypto, so the bot
 serves to test compatibility for the crypto functions.
-##OS Dependencies
-###Linux
+## OS Dependencies
+### Linux
 ```
 apt-get install tor build-essential libssl-dev git
 ```
-###OSX
+### OSX
 ```
 brew install openssl
 brew install tor
 brew install git
 ```
-##Installation
+## Installation
 You will need a working npm and iojs installation.
-###pangyp
+### pangyp
 The [pangyp module](https://www.npmjs.com/package/pangyp) is a fork of the
 [node-gyp module](https://www.npmjs.com/package/node-gyp) that include io.js
 support.  pangyp is a cross-platform command-line tool written in Node.js for
@@ -38,7 +38,7 @@ compiling native addon modules for io.js
 ```
 npm install pangyp -g
 ```
-##Clone and Build
+## Clone and Build
 ```
 git clone https://github.com/mattcollier/noxiousChatBot.git
 cd noxiousChatBot
